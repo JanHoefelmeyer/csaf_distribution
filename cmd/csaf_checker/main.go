@@ -26,6 +26,7 @@ func run(cfg *config, domains []string) (*Report, error) {
 	return p.run(domains)
 }
 
+// Main function
 func main() {
 	domains, cfg, err := parseArgsConfig()
 	options.ErrorCheck(err)
