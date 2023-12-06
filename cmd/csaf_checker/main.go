@@ -15,7 +15,7 @@ import (
 	"github.com/csaf-poc/csaf_distribution/v3/internal/options"
 )
 
-// run uses a processor to check all the given domains or direct urls
+// run uses a processor to check (all) the given domain(s) or direct urls
 // and generates a report.
 func run(cfg *config, domains []string) (*Report, error) {
 	p, err := newProcessor(cfg)
