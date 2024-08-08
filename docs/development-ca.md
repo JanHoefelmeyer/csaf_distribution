@@ -45,7 +45,7 @@ sudo certtool --generate-self-signed --load-privkey rootca-key.pem --outfile roo
 ```sh
 pushd ~/${FOLDERNAME}
 
-certtool --generate-privkey --outfile testserver-key.pem
+sudo certtool --generate-privkey --outfile testserver-key.pem
 
 echo '
 organization = "'${ORGANAME}'"
@@ -62,9 +62,9 @@ dns_name = "localhost"
 
 serial = 010
 expiration_days = 50
-' > gnutls-certtool.testserver.template
+' | sudo tee -a gnutls-certtool.testserver.template
 
-certtool --generate-certificate --load-privkey testserver-key.pem --outfile testserver.crt --load-ca-certificate rootca-cert.pem --load-ca-privkey rootca-key.pem --template gnutls-certtool.testserver.template --stdout | head -1
+sudo certtool --generate-certificate --load-privkey testserver-key.pem --outfile testserver.crt --load-ca-certificate rootca-cert.pem --load-ca-privkey rootca-key.pem --template gnutls-certtool.testserver.template --stdout | head -1
 
 cat testserver.crt rootca-cert.pem >bundle.crt
 
