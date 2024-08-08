@@ -21,7 +21,7 @@ cd ~/${FOLDERNAME}
 
 sudo certtool --generate-privkey --outfile rootca-key.pem
 
-sudo echo '
+echo '
 organization = "'${ORGANAME}'"
 country = DE
 cn = "Tester"
@@ -32,7 +32,7 @@ crl_signing_key
 
 serial = 001
 expiration_days = 100
-' >gnutls-certtool.rootca.template
+' | sudo tee -a gnutls-certtool.rootca.template
 
 sudo certtool --generate-self-signed --load-privkey rootca-key.pem --outfile rootca-cert.pem --template gnutls-certtool.rootca.template --stdout | head -1
 ```
