@@ -11,7 +11,9 @@
 
 set -e
 
-mkdir -p ~/${FOLDERNAME}
+echo "CC ################################################################################################"
+
+sudo mkdir -p ~/${FOLDERNAME}
 cd ~/${FOLDERNAME}
 
 certtool --generate-privkey --outfile testclient1-key.pem
