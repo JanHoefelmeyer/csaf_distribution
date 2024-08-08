@@ -66,7 +66,7 @@ expiration_days = 50
 
 sudo certtool --generate-certificate --load-privkey testserver-key.pem --outfile testserver.crt --load-ca-certificate rootca-cert.pem --load-ca-privkey rootca-key.pem --template gnutls-certtool.testserver.template --stdout | head -1
 
-cat testserver.crt rootca-cert.pem >bundle.crt
+cat testserver.crt rootca-cert.pem | sudo tee -a bundle.crt
 
 export SSL_CERTIFICATE=$(
 echo "$PWD/bundle.crt"
