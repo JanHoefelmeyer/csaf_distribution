@@ -54,7 +54,7 @@ finds your your private key and the certificate chain.
         ssl_certificate_key '${SSL_CERTIFICATE_KEY}'; # e.g. ssl_certificate_key /etc/ssl/csaf/testserver-key.pem;
 
         ssl_protocols TLSv1.2 TLSv1.3;
-' > ~/${FOLDERNAME}/TLSConfigs.txt
+' | sudo tee -a  ~/${FOLDERNAME}/TLSConfigs.txt
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
