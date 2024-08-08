@@ -15,7 +15,7 @@ echo "ROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 sudo mkdir -p ~/${FOLDERNAME}
 cd ~/${FOLDERNAME}
 
-certtool --generate-privkey --outfile rootca-key.pem
+sudo certtool --generate-privkey --outfile rootca-key.pem
 
 echo '
 organization = "'${ORGANAME}'"
@@ -30,4 +30,4 @@ serial = 001
 expiration_days = 100
 ' >gnutls-certtool.rootca.template
 
-certtool --generate-self-signed --load-privkey rootca-key.pem --outfile rootca-cert.pem --template gnutls-certtool.rootca.template --stdout | head -1
+sudo certtool --generate-self-signed --load-privkey rootca-key.pem --outfile rootca-cert.pem --template gnutls-certtool.rootca.template --stdout | head -1
