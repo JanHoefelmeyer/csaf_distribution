@@ -14,7 +14,9 @@ which is suitable for testing in development setups.
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=../docs/scripts/createRootCAForITest.sh&lines=13-50) -->
 <!-- The below code snippet is automatically added from ../docs/scripts/createRootCAForITest.sh -->
 ```sh
-mkdir -p ~/${FOLDERNAME}
+echo "ROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOT"
+
+sudo mkdir -p ~/${FOLDERNAME}
 cd ~/${FOLDERNAME}
 
 certtool --generate-privkey --outfile rootca-key.pem
