@@ -21,7 +21,7 @@ cd ~/${FOLDERNAME}
 
 sudo certtool --generate-privkey --outfile rootca-key.pem
 
-echo '
+sudo echo '
 organization = "'${ORGANAME}'"
 country = DE
 cn = "Tester"
